@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://e1b43p4v5huu"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_p0qic"]
+[ext_resource type="Texture2D" uid="uid://um1qa2qyq4vl" path="res://UI/title.svg" id="2_j4afl"]
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="4_s7dff"]
+[ext_resource type="PackedScene" uid="uid://d0h7ptlod7ywd" path="res://UI/Buttons/game_button.tscn" id="9_i0x8t"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_p0qic")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.25
+
+[node name="Title" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_j4afl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 20
+
+[node name="ButtonBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Play" parent="MarginContainer/VBoxContainer/HBoxContainer/ButtonBox" instance=ExtResource("9_i0x8t")]
+layout_mode = 2
+button_text = "Start"
+pressed_signal_name = "start_button_pressed"
+font_size = 36
+
+[node name="Settings" parent="MarginContainer/VBoxContainer/HBoxContainer/ButtonBox" instance=ExtResource("9_i0x8t")]
+layout_mode = 2
+button_text = "Settings"
+pressed_signal_name = "settings_button_pressed"
+font_size = 36
+
+[node name="Quit" parent="MarginContainer/VBoxContainer/HBoxContainer/ButtonBox" instance=ExtResource("9_i0x8t")]
+layout_mode = 2
+button_text = "Quit"
+pressed_signal_name = "quit_button_pressed"
+font_size = 36
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Leaderboard2" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_s7dff")]
+layout_mode = 2
+
+[node name="Version" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "vX.X.X"
+horizontal_alignment = 1

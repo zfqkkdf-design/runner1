@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://buxy1ejbko412"]
+
+[ext_resource type="Script" path="res://UI/star_count.gd" id="1_xvck5"]
+
+[node name="StarCount" type="RichTextLabel"]
+offset_right = 351.0
+offset_bottom = 51.0
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.299353, 0.273623, 0.268531, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "					Stars"
+fit_content = true
+scroll_active = false
+script = ExtResource("1_xvck5")
