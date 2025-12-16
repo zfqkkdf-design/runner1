@@ -1,0 +1,41 @@
+workflows:
+  android_godot:
+    name: Android (Godot)
+    max_build_duration: 60
+    environment:
+      vars:
+        # Поставь свою версию Godot (пример: 4.2.2 или 4.1.3)
+        GODOT_VERSION: "4.2.2"
+        EXPORT_PRESET: "Android"
+        PROJECT_PATH: "."
+    scripts:
+      - name: Download Godot (headless) + templates
+        script: |
+          set -e
+          mkdir -p $CM_BUILD_DIR/tools
+          cd $CM_BUILD_DIR/tools
+
+          # Headless editor
+          curl -L -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -o godot.zip
+          GODOT_BIN="$(find . -maxdepth 2 -type f -name 'Godot_v*-stable_linux.x86_64' | head -n 1)"
+          chmod +x "$GODOT_BIN"
+          echo "GODOT_BIN=$GODOT_BIN" >> $CM_ENV
+
+          # Export templates
+          curl -L -o templates.tpz "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+          mkdir -p "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
+          tar -xf templates.tpz -C "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable" --strip-components=1
+      - name: Export Android (AAB)
+        script: |
+          set -e
+          cd "$CM_BUILD_DIR/$PROJECT_PATH"
+
+          # Проверка проекта
+          "$GODOT_BIN" --headless --quit || true
+
+          mkdir -p build/android
+          "$GODOT_BIN" --headless --path . --export-release "$EXPORT_PRESET" "build/android/app-release.aab"
+    artifacts:
+      - build/android/*.aab
+      - build/android/*.apk
