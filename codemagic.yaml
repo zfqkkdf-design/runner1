@@ -15,14 +15,15 @@ workflows:
           mkdir -p "$CM_BUILD_DIR/tools"
           cd "$CM_BUILD_DIR/tools"
 
-          # Godot headless editor
           curl -L -o godot.zip "https://github.com/godotengine/godot-builds/releases/download/${GODOT_RELEASE}/Godot_v${GODOT_RELEASE}_linux.x86_64.zip"
           unzip -o godot.zip
-          GODOT_BIN="$(find . -maxdepth 2 -type f -name 'Godot_v*_linux.x86_64' | head -n 1)"
+
+          # 🔑 НАДЁЖНО ищем бинарник
+          GODOT_BIN=$(find "$CM_BUILD_DIR/tools" -type f -name "Godot_*linux*.x86_64" | head -n 1)
           chmod +x "$GODOT_BIN"
           echo "GODOT_BIN=$GODOT_BIN" >> $CM_ENV
+          echo "Using Godot binary: $GODOT_BIN"
 
-          # Export templates
           curl -L -o templates.tpz "https://github.com/godotengine/godot-builds/releases/download/${GODOT_RELEASE}/Godot_v${GODOT_RELEASE}_export_templates.tpz"
           mkdir -p "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
           tar -xf templates.tpz -C "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable" --strip-components=1
@@ -37,4 +38,4 @@ workflows:
 
     artifacts:
       - build/android/*.aab
-      - build/android/*.apk
+
