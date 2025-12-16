@@ -1,0 +1,31 @@
+{
+  "_comment": "Шаблон для добавления новых скинов в skin_data.json",
+  "_instructions": "Скопируйте нужные записи в Data/skin_data.json, обновив ID и cost",
+  
+  "colors": [
+    {
+      "filename": "new_color_1.svg",
+      "id": 104,
+      "cost": 10
+    },
+    {
+      "filename": "new_color_2.svg",
+      "id": 105,
+      "cost": 20
+    }
+  ],
+
+  "textures": [
+    {
+      "filename": "new_texture_1.svg",
+      "id": 17,
+      "cost": 100
+    },
+    {
+      "filename": "new_texture_2.svg",
+      "id": 18,
+      "cost": 150
+    }
+  ]
+}
+

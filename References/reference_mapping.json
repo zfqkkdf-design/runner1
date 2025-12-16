@@ -1,0 +1,200 @@
+{
+  "_comment": "Маппинг старых и новых референсов. Обновите пути к новым файлам здесь.",
+  "_instructions": "Когда получите новые референсы, обновите пути в этом файле, затем используйте их для замены в проекте.",
+  
+  "Player": {
+    "Colors": {
+      "base": {
+        "old_path": "res://Player/Custom/Colors/base.svg",
+        "new_path": "References/Player/Colors/base.svg",
+        "description": "Базовый цвет ракеты"
+      },
+      "blue": {
+        "old_path": "res://Player/Custom/Colors/blue.svg",
+        "new_path": "References/Player/Colors/blue.svg",
+        "description": "Синий цвет ракеты"
+      },
+      "yellow": {
+        "old_path": "res://Player/Custom/Colors/yellow.svg",
+        "new_path": "References/Player/Colors/yellow.svg",
+        "description": "Желтый цвет ракеты"
+      },
+      "black": {
+        "old_path": "res://Player/Custom/Colors/black.svg",
+        "new_path": "References/Player/Colors/black.svg",
+        "description": "Черный цвет ракеты"
+      }
+    },
+    "Textures": {
+      "base": {
+        "old_path": "res://Player/Custom/Textures/base.svg",
+        "new_path": "References/Player/Textures/base.svg",
+        "description": "Базовая текстура ракеты"
+      },
+      "star_struck": {
+        "old_path": "res://Player/Custom/Textures/star_struck.svg",
+        "new_path": "References/Player/Textures/star_struck.svg",
+        "description": "Текстура 'звездный удар'"
+      },
+      "angel": {
+        "old_path": "res://Player/Custom/Textures/angel.svg",
+        "new_path": "References/Player/Textures/angel.svg",
+        "description": "Текстура ангела"
+      },
+      "fire": {
+        "old_path": "res://Player/Custom/Textures/fire.svg",
+        "new_path": "References/Player/Textures/fire.svg",
+        "description": "Текстура огня"
+      },
+      "pedro": {
+        "old_path": "res://Player/Custom/Textures/pedro.svg",
+        "new_path": "References/Player/Textures/pedro.svg",
+        "description": "Текстура Педро"
+      },
+      "skull": {
+        "old_path": "res://Player/Custom/Textures/skull.svg",
+        "new_path": "References/Player/Textures/skull.svg",
+        "description": "Текстура черепа"
+      },
+      "warning": {
+        "old_path": "res://Player/Custom/Textures/warning.svg",
+        "new_path": "References/Player/Textures/warning.svg",
+        "description": "Текстура предупреждения"
+      }
+    },
+    "Base": {
+      "rocket_base": {
+        "old_path": "res://Player/rocket-base.svg",
+        "new_path": "References/Player/Base/rocket-base.svg",
+        "description": "Базовая модель ракеты"
+      }
+    },
+    "Powerups": {
+      "shield": {
+        "old_path": "res://Player/Powerups/rocket_shield.svg",
+        "new_path": "References/Player/Powerups/rocket_shield.svg",
+        "description": "Щит ракеты"
+      }
+    }
+  },
+  
+  "Enemies": {
+    "Birds": {
+      "birds_svg": {
+        "old_path": "res://Enemies/Birds/birds.svg",
+        "new_path": "References/Enemies/Birds/birds.svg",
+        "description": "SVG спрайт птиц"
+      },
+      "birds_png": {
+        "old_path": "res://Enemies/Birds/birds.png",
+        "new_path": "References/Enemies/Birds/birds.png",
+        "description": "PNG спрайт птиц (для анимации)"
+      },
+      "feather": {
+        "old_path": "res://Enemies/Birds/feather.svg",
+        "new_path": "References/Enemies/Birds/feather.svg",
+        "description": "Перо птицы"
+      }
+    },
+    "Satellite": {
+      "satellite": {
+        "old_path": "res://Enemies/Satellite/satellite.svg",
+        "new_path": "References/Enemies/Satellite/satellite.svg",
+        "description": "Спутник"
+      },
+      "gear": {
+        "old_path": "res://Enemies/Satellite/gear.svg",
+        "new_path": "References/Enemies/Satellite/gear.svg",
+        "description": "Шестеренка спутника"
+      }
+    }
+  },
+  
+  "Collectables": {
+    "Star": {
+      "star": {
+        "old_path": "res://Collectables/Star/star.svg",
+        "new_path": "References/Collectables/Star/star.svg",
+        "description": "Звезда"
+      },
+      "star_back_shine": {
+        "old_path": "res://Collectables/Star/star_back_shine.svg",
+        "new_path": "References/Collectables/Star/star_back_shine.svg",
+        "description": "Фоновое свечение звезды"
+      }
+    },
+    "Shield": {
+      "shield_icon": {
+        "old_path": "res://Collectables/Shield/shield_icon.svg",
+        "new_path": "References/Collectables/Shield/shield_icon.svg",
+        "description": "Иконка щита"
+      }
+    },
+    "Boost": {
+      "boost_icon": {
+        "old_path": "res://Collectables/Boost/boost_icon.svg",
+        "new_path": "References/Collectables/Boost/boost_icon.svg",
+        "description": "Иконка буста"
+      }
+    },
+    "Other": {
+      "drop_box": {
+        "old_path": "res://Collectables/drop_box.svg",
+        "new_path": "References/Collectables/drop_box.svg",
+        "description": "Коробка с дропом"
+      },
+      "plank": {
+        "old_path": "res://Collectables/plank.svg",
+        "new_path": "References/Collectables/plank.svg",
+        "description": "Доска"
+      }
+    }
+  },
+  
+  "Background": {
+    "Sky": {
+      "day_sky": {
+        "old_path": "res://Background/day_sky.svg",
+        "new_path": "References/Background/Sky/day_sky.svg",
+        "description": "Дневное небо"
+      },
+      "night_sky": {
+        "old_path": "res://Background/night_sky.svg",
+        "new_path": "References/Background/Sky/night_sky.svg",
+        "description": "Ночное небо"
+      }
+    },
+    "Clouds": {
+      "clouds": {
+        "old_path": "res://Background/clouds.svg",
+        "new_path": "References/Background/Clouds/clouds.svg",
+        "description": "Облака"
+      }
+    },
+    "Stars": {
+      "bg_star": {
+        "old_path": "res://Background/bg_star.svg",
+        "new_path": "References/Background/Stars/bg_star.svg",
+        "description": "Фоновая звезда"
+      },
+      "bg_star_white": {
+        "old_path": "res://Background/bg_star_white.svg",
+        "new_path": "References/Background/Stars/bg_star_white.svg",
+        "description": "Белая фоновая звезда"
+      }
+    },
+    "Celestial": {
+      "sun": {
+        "old_path": "res://Background/sun.svg",
+        "new_path": "References/Background/Celestial/sun.svg",
+        "description": "Солнце"
+      },
+      "moon": {
+        "old_path": "res://Background/moon.svg",
+        "new_path": "References/Background/Celestial/moon.svg",
+        "description": "Луна"
+      }
+    }
+  }
+}
+
